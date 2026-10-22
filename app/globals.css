@@ -529,9 +529,25 @@ kbd {
 .guarded {
   padding: 72px 0;
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 48px;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
   align-items: center;
+}
+
+.guarded-main {
+  display: grid;
+  gap: 28px;
+}
+
+.guarded-shot {
+  display: grid;
+  place-items: center;
+}
+
+.guarded-shot img {
+  width: min(100%, 420px);
+  height: auto;
+  display: block;
 }
 
 .guarded-copy {

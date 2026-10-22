@@ -76,7 +76,7 @@ function ShieldSection() {
         <h2>Open a latched app and it stays covered.</h2>
         <p>
           The app hides, every screen blurs, and the Touch ID prompt appears. Cancel, and it stays
-          hidden.
+          hidden with Unlock one click away.
         </p>
       </Reveal>
       <Reveal delay={0.08} className="shield-frame glass">
@@ -151,14 +151,15 @@ const GUARDED = [
 function Guarded() {
   return (
     <section className="guarded wrap">
-      <Reveal className="guarded-copy">
-        <h2>Nobody at your desk can switch it off.</h2>
-        <p>
-          Adding apps and locking are instant. Anything that lowers protection waits for your
-          fingerprint or password.
-        </p>
-      </Reveal>
-      <div className="guarded-list">
+      <div className="guarded-main">
+        <Reveal className="guarded-copy">
+          <h2>Nobody at your desk can switch it off.</h2>
+          <p>
+            Adding apps and locking are instant. Anything that lowers protection waits for your
+            fingerprint or password.
+          </p>
+        </Reveal>
+        <div className="guarded-list">
         {GUARDED.map(({ icon: Icon, title, body }, i) => (
           <Reveal key={title} delay={i * 0.06} className="guard-row glass">
             <span className="guard-icon">
@@ -171,7 +172,16 @@ function Guarded() {
             <Fingerprint className="guard-touch" size={22} weight="regular" aria-label="Asks for Touch ID" />
           </Reveal>
         ))}
+        </div>
       </div>
+      <Reveal delay={0.1} className="guarded-shot">
+        <Shot
+          name="settings"
+          alt="Latch Settings: guarded apps with their options, grace period and idle time choices"
+          width={857}
+          height={1300}
+        />
+      </Reveal>
     </section>
   );
 }
